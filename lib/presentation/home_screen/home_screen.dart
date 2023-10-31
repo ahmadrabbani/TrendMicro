@@ -260,47 +260,63 @@ class HomeScreen extends GetWidget<HomeController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the chooseFileScreen.
-  navigateToChooseFile() {
-    // requestPermission();
-    // try {
-    // FilePickerResult? result = await FilePicker.platform.pickFiles(
-    //   type: FileType.any, // You can specify the type of files you want to allow
-    // );
-
-    //     if (result != null) {
-    //       // Handle the selected file(s) here
-    //       for (PlatformFile file in result.files) {
-    //         print('File Name: ${file.name}');
-    //         print('File Path: ${file.path}');
-    //         print('File Size: ${file.size}');
-    //       }
-    //       Get.toNamed(
-    //       AppRoutes.chooseFileScreen,
-    //     );
-    //     } else {
-    //       // User canceled the file selection
-    //       // AlertDi
-    //     }
-    //   } catch (e) {
-    //     // Handle errors, if any
-    //     print('Error picking file: $e');
-    //   }
+  navigateToChooseFile() async {
+    requestPermissionMedia();
+    requestPermissionStorage();
+    try {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.any, // You can specify the type of files you want to allow
+    );
+        print(result);
+        if (result != null) {
+          // Handle the selected file(s) here
+          for (PlatformFile file in result.files) {
+            print('File Name: ${file.name}');
+            print('File Path: ${file.path}');
+            print('File Size: ${file.size}');
+          }
+          Get.toNamed(
+          AppRoutes.chooseFileScreen,
+        );
+        } else {
+          // User canceled the file selection
+          // AlertDi
+        }
+      } catch (e) {
+        // Handle errors, if any
+        print('Error picking file: $e');
+      }
     // Get.toNamed(
     //   AppRoutes.chooseFileScreen,
     // );
   }
-  Future<void> requestPermission() async {
-    var statusStorage = await Permission.storage.status;
-    var statusMedia = await Permission.mediaLibrary.status;
+  Future<void> requestPermissionMedia() async {
+    // Request external storage permission
+  
 
-    if (!statusStorage.isGranted) {
-      await Permission.storage.request();
-    }
-
-    if (!statusMedia.isGranted) {
-      await Permission.mediaLibrary.request();
+    // Request media library permission
+    final mediaStatus = await Permission.mediaLibrary.request();
+    if (mediaStatus.isGranted) {
+      // Permission granted, you can perform media library operations.
+    } else {
+      // Handle the case when the permission is denied.
     }
   }
+
+  Future<void> requestPermissionStorage() async {
+    // Request external storage permission
+  
+    final storageStatus = await Permission.storage.request();
+        if (storageStatus.isGranted) {
+          // Permission granted, you can perform storage operations.
+        } else {
+          // Handle the case when the permission is denied.
+        }
+  }
+
+
+
+
 
   /// Navigates to the scanningUrlScreen when the action is triggered.
 
