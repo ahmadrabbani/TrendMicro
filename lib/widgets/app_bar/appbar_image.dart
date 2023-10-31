@@ -8,13 +8,16 @@ class AppbarImage extends StatelessWidget {
     this.imagePath,
     this.svgPath,
     this.margin,
+    this.height,
+    this.width,
     this.onTap,
   }) : super(
           key: key,
         );
 
   String? imagePath;
-
+  double? height;
+  double? width;
   String? svgPath;
 
   EdgeInsetsGeometry? margin;

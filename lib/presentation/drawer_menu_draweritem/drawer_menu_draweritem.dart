@@ -5,13 +5,13 @@ import 'package:trendmicrofrontend/widgets/custom_text_form_field.dart';
 
 class DrawerMenuDraweritem extends StatelessWidget {
   DrawerMenuDraweritem(
-    this.controller, {
+   {
     Key? key,
   }) : super(
           key: key,
         );
 
-  DrawerMenuController controller;
+  // DrawerMenuController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class DrawerMenuDraweritem extends StatelessWidget {
               ),
             ),
             CustomTextFormField(
-              controller: controller.scanvalueoneController,
+              // controller: controller.scanvalueoneController,
               margin: EdgeInsets.only(
                 left: 20.h,
                 top: 39.v,

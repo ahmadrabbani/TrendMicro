@@ -1,17 +1,63 @@
+import 'package:trendmicrofrontend/presentation/app_navigation_screen/app_navigation_screen.dart';
+import 'package:trendmicrofrontend/presentation/drawer_menu_draweritem/controller/drawer_menu_controller.dart';
+import 'package:trendmicrofrontend/presentation/drawer_menu_draweritem/drawer_menu_draweritem.dart';
+
 import 'controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:trendmicrofrontend/core/app_export.dart';
 import 'package:trendmicrofrontend/widgets/custom_elevated_button.dart';
 import 'package:trendmicrofrontend/widgets/custom_text_form_field.dart';
+// import 'package:trendmicrofrontend/widgets/app_bar/custom_app_bar.dart';
+import 'package:trendmicrofrontend/widgets/app_bar/appbar_image.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:file_picker/file_picker.dart';
+
 
 class HomeScreen extends GetWidget<HomeController> {
+    // final controller =  DrawerMenuController(); // Assuming you have a controller
+
   const HomeScreen({Key? key}) : super(key: key);
+  // final cont = new DrawerMenuController();
+    // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  // void _openDrawer() {
+    
+  // }
 
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
+    return 
+    
+        Scaffold(
+          appBar: AppBar(
+            
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            toolbarHeight: 28.v,
+            automaticallyImplyLeading: false,
+            
+
+            titleSpacing: 0,
+            centerTitle: false,
+              title: Text('My Home Screen'),
+              leading: 
+              AppbarImage(
+                imagePath: '', // Provide the image path here
+                svgPath: ImageConstant.imgMenu, // Provide the SVG path here
+                // margin:'',
+                height: 16.v,
+                width: 16.h,
+                onTap: () {
+                  // Handle the onTap action here
+                  // AppNavigationScreen()
+                  // DrawerMenuDraweritem();
+                  // if(key != Null)
+                  key.currentState.openDrawer();
+                  print('AppbarImage tapped!');
+                },
+              ),
+            ),
+            drawer: DrawerMenuDraweritem(),
             resizeToAvoidBottomInset: false,
             body: Container(
                 width: double.maxFinite,
@@ -19,12 +65,14 @@ class HomeScreen extends GetWidget<HomeController> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 23.v),
-                      CustomImageView(
-                          svgPath: ImageConstant.imgMenu,
-                          height: 20.v,
-                          width: 28.h),
-                      SizedBox(height: 26.v),
+                      
+                      // SizedBox(height: 23.v),
+                      // CustomImageView(
+                      //     svgPath: ImageConstant.imgMenu,
+                      //     height: 20.v,
+                      //     width: 28.h
+                      //     ),
+                      // SizedBox(height: 26.v)
                       Text("lbl_scan_your_files".tr,
                           style: theme.textTheme.titleLarge),
                       SizedBox(height: 13.v),
@@ -204,7 +252,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                 style: CustomTextStyles
                                     .bodySmallOnErrorContainer10))
                       ]))
-                ]))));
+                ])));
   }
 
   /// Navigates to the chooseFileScreen when the action is triggered.
@@ -212,9 +260,45 @@ class HomeScreen extends GetWidget<HomeController> {
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the chooseFileScreen.
   navigateToChooseFile() {
-    Get.toNamed(
-      AppRoutes.chooseFileScreen,
-    );
+    // requestPermission();
+    // try {
+    // FilePickerResult? result = await FilePicker.platform.pickFiles(
+    //   type: FileType.any, // You can specify the type of files you want to allow
+    // );
+
+    //     if (result != null) {
+    //       // Handle the selected file(s) here
+    //       for (PlatformFile file in result.files) {
+    //         print('File Name: ${file.name}');
+    //         print('File Path: ${file.path}');
+    //         print('File Size: ${file.size}');
+    //       }
+    //       Get.toNamed(
+    //       AppRoutes.chooseFileScreen,
+    //     );
+    //     } else {
+    //       // User canceled the file selection
+    //       // AlertDi
+    //     }
+    //   } catch (e) {
+    //     // Handle errors, if any
+    //     print('Error picking file: $e');
+    //   }
+    // Get.toNamed(
+    //   AppRoutes.chooseFileScreen,
+    // );
+  }
+  Future<void> requestPermission() async {
+    var statusStorage = await Permission.storage.status;
+    var statusMedia = await Permission.mediaLibrary.status;
+
+    if (!statusStorage.isGranted) {
+      await Permission.storage.request();
+    }
+
+    if (!statusMedia.isGranted) {
+      await Permission.mediaLibrary.request();
+    }
   }
 
   /// Navigates to the scanningUrlScreen when the action is triggered.
@@ -226,4 +310,24 @@ class HomeScreen extends GetWidget<HomeController> {
       AppRoutes.scanningUrlScreen,
     );
   }
+
+//   void showErrorDialog(BuildContext context, String errorMessage) {
+//   showDialog(
+//     context: context,
+//     builder: (BuildContext context) {
+//       return AlertDialog(
+//         title: Text('Error'),
+//         content: Text(errorMessage),
+//         actions: <Widget>[
+//           FlatButton(
+//             child: Text('OK'),
+//             onPressed: () {
+//               Navigator.of(context).pop(); // Close the dialog
+//             },
+//           ),
+//         ],
+//       );
+//     },
+//   );
+// }
 }

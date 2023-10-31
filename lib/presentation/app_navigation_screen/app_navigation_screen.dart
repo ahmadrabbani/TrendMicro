@@ -8,7 +8,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
+    return Drawer(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onErrorContainer.withOpacity(1),
             body: SizedBox(

@@ -142,6 +142,7 @@ class LogInScreen extends GetWidget<LogInController> {
   /// While navigation passing user_id, as an argument to the
   /// homeScreen
   navigateToLogin() {
+    // if(isValidEmail(inputString))
     Get.toNamed(AppRoutes.homeScreen,
         arguments: {NavigationArgs.userId: 1});
   }
