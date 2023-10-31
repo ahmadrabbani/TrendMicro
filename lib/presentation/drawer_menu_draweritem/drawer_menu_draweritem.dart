@@ -88,13 +88,22 @@ class DrawerMenuDraweritem extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  CustomImageView(
-                    svgPath: ImageConstant.imgSettings,
-                    height: 26.v,
-                    width: 24.h,
-                    margin: EdgeInsets.only(bottom: 1.v),
-                  ),
-                  Padding(
+                  OutlinedButton(onPressed: ()=> {
+                      Get.toNamed(
+                        AppRoutes.allEntriesScreen,
+                      )
+                    }, 
+                    
+                    child:Row(
+                      children: [
+                        CustomImageView(
+                      svgPath: ImageConstant.imgSettings,
+                      height: 26.v,
+                      width: 24.h,
+                      margin: EdgeInsets.only(bottom: 1.v),
+                      
+                    ),
+                    Padding(
                     padding: EdgeInsets.only(
                       left: 20.h,
                       top: 3.v,
@@ -104,6 +113,13 @@ class DrawerMenuDraweritem extends StatelessWidget {
                       style: theme.textTheme.bodyLarge,
                     ),
                   ),
+                      ]
+                      
+                    )
+                      
+                    
+                  
+                  )
                 ],
               ),
             ),
@@ -114,7 +130,11 @@ class DrawerMenuDraweritem extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  CustomImageView(
+                  OutlinedButton(onPressed: ()=>{
+                    
+                  }, 
+                  child:Row(children: [
+                    CustomImageView(
                     svgPath: ImageConstant.imgTicket,
                     height: 26.v,
                     width: 24.h,
@@ -126,6 +146,8 @@ class DrawerMenuDraweritem extends StatelessWidget {
                       style: theme.textTheme.bodyLarge,
                     ),
                   ),
+                  ],))
+                  
                 ],
               ),
             ),
@@ -136,7 +158,10 @@ class DrawerMenuDraweritem extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  CustomImageView(
+                  OutlinedButton(onPressed: (() => {
+
+                  }), child: Row(children: [
+                    CustomImageView(
                     svgPath: ImageConstant.imgGroup1143,
                     height: 26.adaptSize,
                     width: 26.adaptSize,
@@ -152,6 +177,8 @@ class DrawerMenuDraweritem extends StatelessWidget {
                       style: theme.textTheme.bodyLarge,
                     ),
                   ),
+                  ],))
+                  
                 ],
               ),
             ),
@@ -162,7 +189,10 @@ class DrawerMenuDraweritem extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  CustomImageView(
+                  OutlinedButton(onPressed: ()=>{
+
+                  }, child: Row(children: [
+                    CustomImageView(
                     svgPath: ImageConstant.imgSearchOnerrorcontainer,
                     height: 26.v,
                     width: 25.h,
@@ -178,6 +208,9 @@ class DrawerMenuDraweritem extends StatelessWidget {
                       style: theme.textTheme.bodyLarge,
                     ),
                   ),
+
+                  ],))
+                  
                 ],
               ),
             ),
@@ -208,7 +241,10 @@ class DrawerMenuDraweritem extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  CustomImageView(
+                  OutlinedButton(onPressed: ()=>{
+
+                  }, child: Row(children: [
+                    CustomImageView(
                     svgPath: ImageConstant.imgVolume,
                     height: 28.adaptSize,
                     width: 28.adaptSize,
@@ -223,6 +259,8 @@ class DrawerMenuDraweritem extends StatelessWidget {
                       style: CustomTextStyles.titleMediumSemiBold,
                     ),
                   ),
+                  ],))
+                  
                 ],
               ),
             ),

@@ -52,7 +52,8 @@ class HomeScreen extends GetWidget<HomeController> {
                   // AppNavigationScreen()
                   // DrawerMenuDraweritem();
                   // if(key != Null)
-                  key.currentState.openDrawer();
+                  // key.currentState.openDrawer();
+                  // openDrawer();
                   print('AppbarImage tapped!');
                 },
               ),
