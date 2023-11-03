@@ -1,3 +1,5 @@
+import 'package:trendmicrofrontend/presentation/drawer_menu_draweritem/drawer_menu_draweritem.dart';
+
 import '../all_entries_expanded_screen/widgets/usernetwork_item_widget.dart';
 import 'controller/all_entries_expanded_controller.dart';
 import 'models/usernetwork_item_model.dart';
@@ -17,6 +19,7 @@ class AllEntriesExpandedScreen extends GetWidget<AllEntriesExpandedController> {
   AllEntriesExpandedScreen({Key? key}) : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,14 @@ class AllEntriesExpandedScreen extends GetWidget<AllEntriesExpandedController> {
                 leading: AppbarImage(
                     svgPath: ImageConstant.imgMenu,
                     margin:
-                        EdgeInsets.only(left: 21.h, top: 18.v, bottom: 17.v)),
+                        EdgeInsets.only(left: 21.h, top: 18.v, bottom: 17.v),
+                        onTap: (){
+                  _scaffoldKey.currentState?.openDrawer();
+
+                  print('AppbarImage tapped!');
+                },
+                        ),
+                        
                 centerTitle: true,
                 title: AppbarTitle(text: "lbl_all_entries".tr),
                 actions: [
@@ -37,6 +47,8 @@ class AllEntriesExpandedScreen extends GetWidget<AllEntriesExpandedController> {
                       svgPath: ImageConstant.imgSearch,
                       margin: EdgeInsets.fromLTRB(21.h, 18.v, 21.h, 17.v))
                 ]),
+                            drawer: DrawerMenuDraweritem(),
+
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -603,6 +615,7 @@ class AllEntriesExpandedScreen extends GetWidget<AllEntriesExpandedController> {
                                                               .imgGroup1160,
                                                           height: 16.v,
                                                           width: 4.h,
+                                                          
                                                           margin:
                                                               EdgeInsets.only(
                                                                   left: 44.h,

@@ -13,10 +13,16 @@ class LogInScreen extends GetWidget<LogInController> {
   LogInScreen({Key? key}) : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
+    var model = controller.logInModelObj.value;
+    // ignore: unnecessary_statements
+    // if(controller.isLoggedIn ?!=false){
+
+    // } 
+  
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -78,7 +84,7 @@ class LogInScreen extends GetWidget<LogInController> {
                       CustomElevatedButton(
                           text: "lbl_log_in".tr,
                           onTap: () {
-                            navigateToLogin();
+                            controller.login();
                           }),
                       SizedBox(height: 16.v),
                       Text("msg_forgot_password".tr,
@@ -134,6 +140,7 @@ class LogInScreen extends GetWidget<LogInController> {
                               textAlign: TextAlign.left))
                     ])))));
   }
+ 
 
   /// Navigates to the homeScreen when the action is triggered.
 
@@ -141,11 +148,7 @@ class LogInScreen extends GetWidget<LogInController> {
   /// push the named route for the homeScreen.
   /// While navigation passing user_id, as an argument to the
   /// homeScreen
-  navigateToLogin() {
-    // if(isValidEmail(inputString))
-    Get.toNamed(AppRoutes.homeScreen,
-        arguments: {NavigationArgs.userId: 1});
-  }
+  
 
   /// Performs a Google sign-in and returns a [GoogleUser] object.
   ///

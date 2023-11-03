@@ -1,3 +1,6 @@
+import 'package:trendmicrofrontend/presentation/drawer_menu_draweritem/drawer_menu_draweritem.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../scanned_url_one_screen/widgets/scanned_url_one_item_widget.dart';
 import 'controller/scanned_url_one_controller.dart';
 import 'models/scanned_url_one_item_model.dart';
@@ -7,10 +10,13 @@ import 'package:trendmicrofrontend/widgets/custom_outlined_button.dart';
 
 // ignore_for_file: must_be_immutable
 class ScannedUrlOneScreen extends GetWidget<ScannedUrlOneController> {
-  const ScannedUrlOneScreen({Key? key})
+  GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
+
+   ScannedUrlOneScreen({Key? key})
       : super(
           key: key,
         );
+  final Uri _url = Uri.parse('https://flutter.dev');
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +24,8 @@ class ScannedUrlOneScreen extends GetWidget<ScannedUrlOneController> {
 
     return SafeArea(
       child: Scaffold(
+       drawer: DrawerMenuDraweritem(),
+
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(
@@ -32,6 +40,11 @@ class ScannedUrlOneScreen extends GetWidget<ScannedUrlOneController> {
                 svgPath: ImageConstant.imgMenu,
                 height: 20.v,
                 width: 28.h,
+                onTap: () {
+                  _scaffoldKey.currentState?.openDrawer();
+
+                  print('AppbarImage tapped!');
+                },
               ),
               SizedBox(height: 27.v),
               Text(
@@ -82,6 +95,11 @@ class ScannedUrlOneScreen extends GetWidget<ScannedUrlOneController> {
                             child: CustomOutlinedButton(
                               text: "lbl_scan_another".tr,
                               margin: EdgeInsets.only(right: 8.h),
+                              onTap: () => {
+                                Get.toNamed(
+                                  AppRoutes.homeScreen
+                                )
+                              },
                             ),
                           ),
                           Expanded(
@@ -89,6 +107,10 @@ class ScannedUrlOneScreen extends GetWidget<ScannedUrlOneController> {
                               text: "lbl_open_url".tr,
                               margin: EdgeInsets.only(left: 8.h),
                               buttonStyle: CustomButtonStyles.outlinePrimary,
+                              onTap: () => {
+
+                                _launchUrl(_url),
+                              }
                             ),
                           ),
                         ],
@@ -137,4 +159,9 @@ class ScannedUrlOneScreen extends GetWidget<ScannedUrlOneController> {
       ),
     );
   }
+  Future<void> _launchUrl(_url) async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
 }

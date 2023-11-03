@@ -7,6 +7,7 @@ class ImageConstant {
 
   // Log In images
   static String imgImage19 = '$imagePath/img_image_19.png';
+    static String scan_file = '$imagePath/scan_url.gif';
 
   static String imgImage20 = '$imagePath/img_image_20.png';
 

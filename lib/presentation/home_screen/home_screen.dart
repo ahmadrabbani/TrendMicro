@@ -1,5 +1,4 @@
-import 'package:trendmicrofrontend/presentation/app_navigation_screen/app_navigation_screen.dart';
-import 'package:trendmicrofrontend/presentation/drawer_menu_draweritem/controller/drawer_menu_controller.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:trendmicrofrontend/presentation/drawer_menu_draweritem/drawer_menu_draweritem.dart';
 
 import 'controller/home_controller.dart';
@@ -7,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:trendmicrofrontend/core/app_export.dart';
 import 'package:trendmicrofrontend/widgets/custom_elevated_button.dart';
 import 'package:trendmicrofrontend/widgets/custom_text_form_field.dart';
-// import 'package:trendmicrofrontend/widgets/app_bar/custom_app_bar.dart';
+
 import 'package:trendmicrofrontend/widgets/app_bar/appbar_image.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:file_picker/file_picker.dart';
@@ -15,13 +14,8 @@ import 'package:file_picker/file_picker.dart';
 
 class HomeScreen extends GetWidget<HomeController> {
     // final controller =  DrawerMenuController(); // Assuming you have a controller
-
-  const HomeScreen({Key? key}) : super(key: key);
-  // final cont = new DrawerMenuController();
-    // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  // void _openDrawer() {
-    
-  // }
+   GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
+   HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +23,8 @@ class HomeScreen extends GetWidget<HomeController> {
     return 
     
         Scaffold(
+            key: _scaffoldKey,
+
           appBar: AppBar(
             
             backgroundColor: Colors.transparent,
@@ -48,12 +44,8 @@ class HomeScreen extends GetWidget<HomeController> {
                 height: 16.v,
                 width: 16.h,
                 onTap: () {
-                  // Handle the onTap action here
-                  // AppNavigationScreen()
-                  // DrawerMenuDraweritem();
-                  // if(key != Null)
-                  // key.currentState.openDrawer();
-                  // openDrawer();
+                  _scaffoldKey.currentState?.openDrawer();
+
                   print('AppbarImage tapped!');
                 },
               ),
@@ -67,13 +59,7 @@ class HomeScreen extends GetWidget<HomeController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       
-                      // SizedBox(height: 23.v),
-                      // CustomImageView(
-                      //     svgPath: ImageConstant.imgMenu,
-                      //     height: 20.v,
-                      //     width: 28.h
-                      //     ),
-                      // SizedBox(height: 26.v)
+
                       Text("lbl_scan_your_files".tr,
                           style: theme.textTheme.titleLarge),
                       SizedBox(height: 13.v),
@@ -179,7 +165,10 @@ class HomeScreen extends GetWidget<HomeController> {
                               margin:
                                   EdgeInsets.fromLTRB(12.h, 15.v, 15.h, 16.v),
                               child: CustomImageView(
-                                  svgPath: ImageConstant.imgSearch)),
+                                  svgPath: ImageConstant.imgSearch,
+                                  onTap: () => navigateToScanURL(),
+                                  )
+                                  ),
                           suffixConstraints: BoxConstraints(maxHeight: 48.v),
                           contentPadding: EdgeInsets.only(
                               left: 13.h, top: 11.v, bottom: 11.v),
@@ -242,7 +231,9 @@ class HomeScreen extends GetWidget<HomeController> {
                         CustomImageView(
                             imagePath: ImageConstant.imgSecurity11,
                             height: 36.adaptSize,
-                            width: 36.adaptSize),
+                            width: 36.adaptSize,
+                            
+                            ),
                         SizedBox(height: 10.v),
                         Text("lbl_malware_files".tr,
                             style: CustomTextStyles.bodySmall10),
@@ -263,7 +254,25 @@ class HomeScreen extends GetWidget<HomeController> {
   navigateToChooseFile() async {
     requestPermissionMedia();
     requestPermissionStorage();
-    try {
+    
+    // Get.toNamed(
+    //   AppRoutes.chooseFileScreen,
+    // );
+  }
+  Future<void> requestPermissionMedia() async {
+    // Request external storage permission
+  
+
+    // Request media library permission
+    bool permissionStatus;
+final deviceInfo = await DeviceInfoPlugin().androidInfo;
+    
+if (deviceInfo.version.sdkInt > 32) {
+    permissionStatus = await Permission.photos.request().isGranted;
+} else {
+    permissionStatus = await Permission.storage.request().isGranted;
+}
+try {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.any, // You can specify the type of files you want to allow
     );
@@ -276,9 +285,10 @@ class HomeScreen extends GetWidget<HomeController> {
             print('File Size: ${file.size}');
           }
           Get.toNamed(
-          AppRoutes.chooseFileScreen,
+          AppRoutes.scanningYourFileScreen,
         );
         } else {
+          Get.snackbar("Alert!!", " No File Selected");
           // User canceled the file selection
           // AlertDi
         }
@@ -286,31 +296,19 @@ class HomeScreen extends GetWidget<HomeController> {
         // Handle errors, if any
         print('Error picking file: $e');
       }
-    // Get.toNamed(
-    //   AppRoutes.chooseFileScreen,
-    // );
-  }
-  Future<void> requestPermissionMedia() async {
-    // Request external storage permission
-  
-
-    // Request media library permission
-    final mediaStatus = await Permission.mediaLibrary.request();
-    if (mediaStatus.isGranted) {
-      // Permission granted, you can perform media library operations.
-    } else {
-      // Handle the case when the permission is denied.
-    }
   }
 
   Future<void> requestPermissionStorage() async {
     // Request external storage permission
   
-    final storageStatus = await Permission.storage.request();
+    final storageStatus = await Permission.manageExternalStorage.request();
         if (storageStatus.isGranted) {
+          
           // Permission granted, you can perform storage operations.
+           
         } else {
           // Handle the case when the permission is denied.
+          print("Permission not granted storage");
         }
   }
 
@@ -323,10 +321,26 @@ class HomeScreen extends GetWidget<HomeController> {
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the scanningUrlScreen.
   navigateToScanURL() {
-    Get.toNamed(
+    final url = controller.enteryoururlController.text;
+    if(url !="" && isValidUrl(url)){
+      Get.toNamed(
       AppRoutes.scanningUrlScreen,
     );
+    }
+    else
+    {
+      Get.snackbar("Error:", "Invalid URL!!");
+    }
+    
   }
+  bool isValidUrl(String url) {
+  final pattern = RegExp(
+    r'^(http|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$',
+    caseSensitive: false,
+    multiLine: false,
+  );
+  return pattern.hasMatch(url);
+}
 
 //   void showErrorDialog(BuildContext context, String errorMessage) {
 //   showDialog(

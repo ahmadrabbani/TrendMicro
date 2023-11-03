@@ -1,3 +1,8 @@
+import 'package:hive/hive.dart';
+import 'package:trendmicrofrontend/presentation/all_entries_screen/models/password_entry.dart';
+import 'package:trendmicrofrontend/presentation/all_entries_screen/password_form.dart';
+import 'package:trendmicrofrontend/presentation/drawer_menu_draweritem/drawer_menu_draweritem.dart';
+
 import 'controller/all_entries_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:trendmicrofrontend/core/app_export.dart';
@@ -9,19 +14,30 @@ import 'package:trendmicrofrontend/widgets/custom_elevated_button.dart';
 import 'package:trendmicrofrontend/widgets/custom_icon_button.dart';
 
 class AllEntriesScreen extends GetWidget<AllEntriesController> {
-  const AllEntriesScreen({Key? key}) : super(key: key);
+   AllEntriesScreen({Key? key}) : super(key: key);
+   GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
+      // controller = Get.put(AllEntriesController());
+
 
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
+    
     return SafeArea(
         child: Scaffold(
+          key: _scaffoldKey,
             appBar: CustomAppBar(
                 leadingWidth: 49.h,
                 leading: AppbarImage(
                     svgPath: ImageConstant.imgMenu,
                     margin:
-                        EdgeInsets.only(left: 21.h, top: 18.v, bottom: 17.v)),
+                        EdgeInsets.only(left: 21.h, top: 18.v, bottom: 17.v),
+                        onTap: () {
+                  _scaffoldKey.currentState?.openDrawer();
+
+                  print('AppbarImage tapped!');
+                },
+                        ),
                 centerTitle: true,
                 title: AppbarTitle(text: "lbl_all_entries".tr),
                 actions: [
@@ -29,6 +45,8 @@ class AllEntriesScreen extends GetWidget<AllEntriesController> {
                       svgPath: ImageConstant.imgSearch,
                       margin: EdgeInsets.fromLTRB(21.h, 18.v, 21.h, 17.v))
                 ]),
+                        drawer: DrawerMenuDraweritem(),
+
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(vertical: 10.v),
@@ -259,7 +277,7 @@ class AllEntriesScreen extends GetWidget<AllEntriesController> {
                                                                   GestureDetector(
                                                                       onTap:
                                                                           () {
-                                                                        onTapTxtHttps1619716913();
+                                                                        openUrlWeb();
                                                                       },
                                                                       child: Text(
                                                                           "msg_https_161_97_169_136_10000"
@@ -268,432 +286,79 @@ class AllEntriesScreen extends GetWidget<AllEntriesController> {
                                                                               CustomTextStyles.bodySmallOnErrorContainerLight)))
                                                         ])),
                                                 Spacer(),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup1160,
-                                                    height: 16.v,
-                                                    width: 4.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 11.v,
-                                                        right: 3.h,
-                                                        bottom: 10.v))
-                                              ])),
-                                      SizedBox(height: 12.v),
-                                      Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 10.h, vertical: 12.v),
-                                          decoration: AppDecoration
-                                              .fillPrimaryContainer
-                                              .copyWith(
-                                                  borderRadius:
-                                                      BorderRadiusStyle
-                                                          .roundedBorder7),
-                                          child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgArrowright,
-                                                    height: 12.v,
-                                                    width: 7.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 16.v,
-                                                        bottom: 10.v)),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgFrameOnprimarycontainer,
-                                                    height: 28.adaptSize,
-                                                    width: 28.adaptSize,
-                                                    margin: EdgeInsets.only(
-                                                        left: 11.h,
-                                                        top: 8.v,
-                                                        bottom: 2.v)),
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 11.h, top: 1.v),
-                                                    child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                              "lbl_192_145_37_114"
-                                                                  .tr,
-                                                              style: theme
-                                                                  .textTheme
-                                                                  .labelLarge),
-                                                          SizedBox(height: 2.v),
-                                                          Opacity(
-                                                              opacity: 0.7,
-                                                              child:
-                                                                  GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        onTapTxtHttps1921453711();
-                                                                      },
-                                                                      child: Text(
-                                                                          "msg_https_192_145_37_114"
-                                                                              .tr,
-                                                                          style:
-                                                                              CustomTextStyles.bodySmallOnErrorContainerLight)))
-                                                        ])),
-                                                Spacer(),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup1160,
-                                                    height: 16.v,
-                                                    width: 4.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 11.v,
-                                                        right: 3.h,
-                                                        bottom: 10.v))
-                                              ])),
-                                      SizedBox(height: 12.v),
-                                      Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 10.h, vertical: 12.v),
-                                          decoration: AppDecoration
-                                              .fillPrimaryContainer
-                                              .copyWith(
-                                                  borderRadius:
-                                                      BorderRadiusStyle
-                                                          .roundedBorder7),
-                                          child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgArrowright,
-                                                    height: 12.v,
-                                                    width: 7.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 16.v,
-                                                        bottom: 10.v)),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgFrameOnprimarycontainer,
-                                                    height: 28.adaptSize,
-                                                    width: 28.adaptSize,
-                                                    margin: EdgeInsets.only(
-                                                        left: 11.h,
-                                                        top: 8.v,
-                                                        bottom: 2.v)),
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 11.h, top: 1.v),
-                                                    child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                              "lbl_192_168_1_1"
-                                                                  .tr,
-                                                              style: theme
-                                                                  .textTheme
-                                                                  .labelLarge),
-                                                          SizedBox(height: 2.v),
-                                                          Opacity(
-                                                              opacity: 0.7,
-                                                              child:
-                                                                  GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        onTapTxtHttps19216811();
-                                                                      },
-                                                                      child: Text(
-                                                                          "msg_https_192_168_1_1"
-                                                                              .tr,
-                                                                          style:
-                                                                              CustomTextStyles.bodySmallOnErrorContainerLight)))
-                                                        ])),
-                                                Spacer(),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup1160,
-                                                    height: 16.v,
-                                                    width: 4.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 11.v,
-                                                        right: 3.h,
-                                                        bottom: 10.v))
-                                              ])),
-                                      SizedBox(height: 12.v),
-                                      Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 10.h, vertical: 12.v),
-                                          decoration: AppDecoration
-                                              .fillPrimaryContainer
-                                              .copyWith(
-                                                  borderRadius:
-                                                      BorderRadiusStyle
-                                                          .roundedBorder7),
-                                          child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgArrowright,
-                                                    height: 12.v,
-                                                    width: 7.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 16.v,
-                                                        bottom: 10.v)),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgFrameOnprimarycontainer,
-                                                    height: 28.adaptSize,
-                                                    width: 28.adaptSize,
-                                                    margin: EdgeInsets.only(
-                                                        left: 11.h,
-                                                        top: 8.v,
-                                                        bottom: 2.v)),
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 11.h, top: 1.v),
-                                                    child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                              "lbl_207_244_250_189"
-                                                                  .tr,
-                                                              style: theme
-                                                                  .textTheme
-                                                                  .labelLarge),
-                                                          SizedBox(height: 2.v),
-                                                          Opacity(
-                                                              opacity: 0.7,
-                                                              child:
-                                                                  GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        onTapTxtHttps2072442501();
-                                                                      },
-                                                                      child: Text(
-                                                                          "msg_https_207_244_250_189"
-                                                                              .tr,
-                                                                          style:
-                                                                              CustomTextStyles.bodySmallOnErrorContainerLight)))
-                                                        ])),
-                                                Spacer(),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup1160,
-                                                    height: 16.v,
-                                                    width: 4.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 11.v,
-                                                        right: 3.h,
-                                                        bottom: 10.v))
-                                              ])),
-                                      SizedBox(height: 12.v),
-                                      Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 10.h, vertical: 13.v),
-                                          decoration: AppDecoration
-                                              .fillPrimaryContainer
-                                              .copyWith(
-                                                  borderRadius:
-                                                      BorderRadiusStyle
-                                                          .roundedBorder7),
-                                          child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgArrowright,
-                                                    height: 12.v,
-                                                    width: 7.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 14.v,
-                                                        bottom: 11.v)),
-                                                CustomImageView(
-                                                    imagePath:
-                                                        ImageConstant.imgPpt1,
-                                                    height: 35.adaptSize,
-                                                    width: 35.adaptSize,
-                                                    margin: EdgeInsets.only(
-                                                        left: 11.h, top: 3.v)),
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 11.h,
-                                                        top: 10.v,
-                                                        bottom: 9.v),
-                                                    child: Text("lbl_3e3e".tr,
-                                                        style: theme.textTheme
-                                                            .labelLarge)),
-                                                Spacer(),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup1160,
-                                                    height: 16.v,
-                                                    width: 4.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 11.v,
-                                                        right: 3.h,
-                                                        bottom: 10.v))
-                                              ])),
-                                      SizedBox(height: 12.v),
-                                      Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 10.h, vertical: 16.v),
-                                          decoration: AppDecoration
-                                              .fillPrimaryContainer
-                                              .copyWith(
-                                                  borderRadius:
-                                                      BorderRadiusStyle
-                                                          .roundedBorder7),
-                                          child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgArrowright,
-                                                    height: 12.v,
-                                                    width: 7.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 8.v,
-                                                        bottom: 12.v)),
-                                                CustomImageView(
-                                                    imagePath: ImageConstant
-                                                        .imgAccessibilityi,
-                                                    height: 28.adaptSize,
-                                                    width: 28.adaptSize,
-                                                    margin: EdgeInsets.only(
-                                                        left: 11.h,
-                                                        bottom: 4.v)),
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 11.h,
-                                                        top: 5.v,
-                                                        bottom: 8.v),
-                                                    child: Text(
-                                                        "msg_accessibility_inspector_app"
-                                                            .tr,
-                                                        style: theme.textTheme
-                                                            .labelLarge)),
-                                                Spacer(),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup1160,
-                                                    height: 16.v,
-                                                    width: 4.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 8.v,
-                                                        right: 3.h,
-                                                        bottom: 7.v))
-                                              ])),
-                                      SizedBox(height: 19.v),
-                                      Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 10.h, vertical: 12.v),
-                                          decoration: AppDecoration
-                                              .fillPrimaryContainer
-                                              .copyWith(
-                                                  borderRadius:
-                                                      BorderRadiusStyle
-                                                          .roundedBorder7),
-                                          child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgArrowright,
-                                                    height: 12.v,
-                                                    width: 7.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 16.v,
-                                                        bottom: 10.v)),
-                                                CustomImageView(
-                                                    imagePath: ImageConstant
-                                                        .imgEnvatologo084,
-                                                    height: 28.adaptSize,
-                                                    width: 28.adaptSize,
-                                                    margin: EdgeInsets.only(
-                                                        left: 11.h,
-                                                        top: 8.v,
-                                                        bottom: 2.v)),
-                                                Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 11.h, top: 1.v),
-                                                    child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                              "lbl_account_envato"
-                                                                  .tr,
-                                                              style: theme
-                                                                  .textTheme
-                                                                  .labelLarge),
-                                                          SizedBox(height: 1.v),
-                                                          Opacity(
-                                                              opacity: 0.7,
-                                                              child:
-                                                                  GestureDetector(
-                                                                      onTap:
-                                                                          () {
-                                                                        onTapTxtWeburl();
-                                                                      },
-                                                                      child: Text(
-                                                                          "msg_https_account_envato_com"
-                                                                              .tr,
-                                                                          style:
-                                                                              CustomTextStyles.bodySmallOnErrorContainerLight)))
-                                                        ])),
-                                                Spacer(),
-                                                CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgGroup1160,
-                                                    height: 16.v,
-                                                    width: 4.h,
-                                                    margin: EdgeInsets.only(
-                                                        top: 11.v,
-                                                        right: 3.h,
-                                                        bottom: 10.v))
-                                              ]))
-                                    ]))),
-                        CustomIconButton(
+                                    ])
+                                    )
+                      ])
+                                )
+                                      ),
+                                       
+                                       
+                                       CustomIconButton(
                             height: 67.adaptSize,
                             width: 67.adaptSize,
                             margin: EdgeInsets.only(bottom: 23.v),
                             padding: EdgeInsets.all(21.h),
                             alignment: Alignment.bottomRight,
+                            onTap: () {
+                                       showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                          String website = "";
+                                          String username = "";
+                                          String password = "";
+                                          
+
+                                            return AlertDialog(
+                                              backgroundColor: const Color.fromARGB(255, 234, 5, 5).withOpacity(0.3),
+                                              title: Text('Add Password Entry'),
+                                              content:  Container(
+                                                constraints: BoxConstraints(maxHeight: 300), 
+                                                decoration: BoxDecoration(
+                                                  gradient: LinearGradient(
+                                                    colors: [Colors.blue, Colors.red], // Define your gradient colors
+                                                    begin: Alignment.topCenter,
+                                                    end: Alignment.bottomCenter,
+                                                  ),
+                                                ),
+                                                child:MyForm(
+                                                onSaved: (web, user, pass) {
+                                                  website = web;
+                                                  username = user;
+                                                  password = pass;
+                                                },
+                                              ),
+                                              ),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  child: Text('Cancel'),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () async {
+                                                    final passwordsBox = await Hive.openBox<PasswordEntry>('passwords');
+                                                    passwordsBox.add(PasswordEntry(website, username, password));
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  child: Text('Save'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                       );
+                                        
+                              },
                             child:
                                 CustomImageView(svgPath: ImageConstant.imgPlus))
                       ])),
                   SizedBox(height: 5.v)
                 ]))));
   }
+  
 
-  onTapTxtHttps1619716913() {
+  openUrlWeb() {
     // TODO: implement Actions
   }
 
-  onTapTxtHttps1921453711() {
-    // TODO: implement Actions
-  }
-
-  onTapTxtHttps19216811() {
-    // TODO: implement Actions
-  }
-
-  onTapTxtHttps2072442501() {
-    // TODO: implement Actions
-  }
-
-  onTapTxtWeburl() {
-    // TODO: implement Actions
-  }
 }

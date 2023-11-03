@@ -10,9 +10,9 @@ class ScanningUrlController extends GetxController {
 
   @override
   void onReady() {
-    Future.delayed(const Duration(milliseconds: 15000), () {
+    Future.delayed(const Duration(milliseconds: 10000), () {
       Get.toNamed(
-        AppRoutes.scannedUrlScreen,
+        AppRoutes.scannedUrlOneScreen,
       );
     });
   }

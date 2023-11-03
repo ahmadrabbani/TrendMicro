@@ -14,188 +14,195 @@
 14    <uses-permission android:name="android.permission.INTERNET" />
 14-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:9:5-66
 14-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:9:22-64
-15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:10:5-81
-15-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:10:22-78
-16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-16-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:11:5-80
-16-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:11:22-77
-17    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-17-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:12:5-71
-17-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:12:22-68
-18    <uses-permission android:name="android.permission.READ_CONTACTS" />
-18-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:13:5-72
-18-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:13:22-69
-19    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-19-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:14:5-73
-19-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:14:22-70
-20    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-20-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:15:5-79
-20-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:15:22-76
-21    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-21-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:16:5-81
-21-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:16:22-78
-22    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-22-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:17:5-85
-22-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:17:22-82
-23    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-23-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:18:5-75
-23-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:18:22-72
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:9:5-66
+15-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:9:22-64
+16    <!-- Required only if your app targets Android 13 or higher. -->
+17    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+17-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:12:1-74
+17-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:12:18-72
+18    <uses-permission
+18-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:13:1-14:35
+19        android:name="android.permission.READ_EXTERNAL_STORAGE"
+19-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:13:18-73
+20        android:maxSdkVersion="33" />
+20-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:14:6-32
+21    <uses-permission
+21-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:15:1-16:38
+22        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+22-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:15:18-74
+23        android:maxSdkVersion="33" />
+23-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:16:8-34
 24    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-24-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:19:5-76
-24-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:19:22-73
-25    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" /> <!-- 小米相关配置 -->
-25-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:20:5-75
-25-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:20:22-72
-26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-26-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:22:5-79
-26-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:22:22-76
-27    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-27-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:23:5-76
-27-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:23:22-73
-28    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-28-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:24:5-75
-28-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:24:22-72
-29    <uses-permission android:name="android.permission.VIBRATE" />
-29-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:25:5-65
-29-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:25:22-63
-30
-31    <queries>
-31-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
-32        <intent>
-32-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
-33            <action android:name="android.intent.action.GET_CONTENT" />
-33-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
-33-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
-34
-35            <data android:mimeType="*/*" />
-35-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
-35-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
-36        </intent>
-37    </queries>
-38
-39    <application
-39-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:28:5-64:19
-40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.6.0] /Users/ditit/.gradle/caches/transforms-3/aaab9055df4bcc213684bd8c9a4ce85d/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-41        android:debuggable="true"
-42        android:enableOnBackInvokedCallback="true"
-42-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:31:9-51
-43        android:icon="@mipmap/ic_launcher"
-43-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:30:9-43
-44        android:label="trendmicrofrontend" >
-44-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:29:9-43
-45        <activity
-45-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:33:9-58:20
-46            android:name="com.trendmicrofrontend.app.MainActivity"
-46-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:34:13-41
-47            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-47-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:37:13-163
-48            android:exported="true"
-48-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:40:13-36
-49            android:hardwareAccelerated="true"
-49-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:38:13-47
-50            android:launchMode="singleTop"
-50-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:35:13-43
-51            android:theme="@style/LaunchTheme"
-51-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:36:13-47
-52            android:windowSoftInputMode="adjustResize" >
-52-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:39:13-55
-53
-54            <!--
-55                 Specifies an Android theme to apply to this Activity as soon as
-56                 the Android process has started. This theme is visible to the user
-57                 while the Flutter UI initializes. After that, this theme continues
-58                 to determine the Window background behind the Flutter UI.
-59            -->
-60            <meta-data
-60-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:45:13-48:17
-61                android:name="io.flutter.embedding.android.NormalTheme"
-61-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:46:15-70
-62                android:resource="@style/NormalTheme" />
-62-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:47:15-52
-63            <!--
-64                 Displays an Android View that continues showing the launch screen
-65                 Drawable until Flutter paints its first frame, then this splash
-66                 screen fades out. A splash screen is useful to avoid any visual
-67                 gap between the end of Android's launch screen and the painting of
-68                 Flutter's first frame.
-69            -->
-70            <intent-filter>
-70-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:54:13-57:29
-71                <action android:name="android.intent.action.MAIN" />
-71-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:55:17-68
-71-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:55:25-66
-72
-73                <category android:name="android.intent.category.LAUNCHER" />
-73-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:56:17-76
-73-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:56:27-74
-74            </intent-filter>
-75        </activity>
-76        <!--
-77             Don't delete the meta-data below.
-78             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-79        -->
-80        <meta-data
-80-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:61:9-63:33
-81            android:name="flutterEmbedding"
-81-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:62:13-44
-82            android:value="2" />
-82-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:63:13-30
-83
-84        <uses-library
-84-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-85            android:name="androidx.window.extensions"
-85-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-86            android:required="false" />
-86-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-87        <uses-library
-87-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-88            android:name="androidx.window.sidecar"
-88-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-89            android:required="false" />
-89-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-90
-91        <activity
-91-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-92            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-92-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-93            android:excludeFromRecents="true"
-93-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-94            android:exported="false"
-94-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-95-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-96        <!--
-97            Service handling Google Sign-In user revocation. For apps that do not integrate with
-98            Google Sign-In, this service will never be started.
-99        -->
-100        <service
-100-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-101            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-101-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-102            android:exported="true"
-102-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-103            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-103-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-104            android:visibleToInstantApps="true" />
-104-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-105
-106        <activity
-106-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-107            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-107-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-108            android:exported="false"
-108-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-109            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-109-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-110
-111        <meta-data
-111-->[com.google.android.gms:play-services-basement:18.2.0] /Users/ditit/.gradle/caches/transforms-3/d7657c983b2b428f997c0d6cec720a50/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-112            android:name="com.google.android.gms.version"
-112-->[com.google.android.gms:play-services-basement:18.2.0] /Users/ditit/.gradle/caches/transforms-3/d7657c983b2b428f997c0d6cec720a50/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-113            android:value="@integer/google_play_services_version" />
-113-->[com.google.android.gms:play-services-basement:18.2.0] /Users/ditit/.gradle/caches/transforms-3/d7657c983b2b428f997c0d6cec720a50/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-114    </application>
+24-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:17:1-71
+24-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:17:18-69
+25    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+25-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:18:1-70
+25-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:18:18-68
+26    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+26-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:19:1-70
+26-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:19:18-68
+27
+28    <queries>
+28-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:15
+29        <intent>
+29-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-16:18
+30            <action android:name="android.intent.action.GET_CONTENT" />
+30-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-72
+30-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:13:21-69
+31
+32            <data android:mimeType="*/*" />
+32-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-44
+32-->[:file_picker] /Users/ditit/Documents/GitHub/TrendMicro/build/file_picker/intermediates/merged_manifest/debug/AndroidManifest.xml:15:19-41
+33        </intent>
+34    </queries>
+35
+36    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+36-->[:connectivity_plus] /Users/ditit/Documents/GitHub/TrendMicro/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
+36-->[:connectivity_plus] /Users/ditit/Documents/GitHub/TrendMicro/build/connectivity_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
+37
+38    <permission
+38-->[androidx.core:core:1.10.1] /Users/ditit/.gradle/caches/transforms-3/b21b555973808439b375a8ab11ccbc03/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+39        android:name="com.trendmicrofrontend.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+39-->[androidx.core:core:1.10.1] /Users/ditit/.gradle/caches/transforms-3/b21b555973808439b375a8ab11ccbc03/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+40        android:protectionLevel="signature" />
+40-->[androidx.core:core:1.10.1] /Users/ditit/.gradle/caches/transforms-3/b21b555973808439b375a8ab11ccbc03/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+41
+42    <uses-permission android:name="com.trendmicrofrontend.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+42-->[androidx.core:core:1.10.1] /Users/ditit/.gradle/caches/transforms-3/b21b555973808439b375a8ab11ccbc03/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+42-->[androidx.core:core:1.10.1] /Users/ditit/.gradle/caches/transforms-3/b21b555973808439b375a8ab11ccbc03/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+43
+44    <application
+44-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:22:5-58:19
+45        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+45-->[androidx.core:core:1.10.1] /Users/ditit/.gradle/caches/transforms-3/b21b555973808439b375a8ab11ccbc03/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+46        android:debuggable="true"
+47        android:enableOnBackInvokedCallback="true"
+47-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:25:9-51
+48        android:icon="@mipmap/ic_launcher"
+48-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:24:9-43
+49        android:label="trendmicrofrontend" >
+49-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:23:9-43
+50        <activity
+50-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:27:9-52:20
+51            android:name="com.trendmicrofrontend.app.MainActivity"
+51-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:28:13-41
+52            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+52-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:31:13-163
+53            android:exported="true"
+53-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:34:13-36
+54            android:hardwareAccelerated="true"
+54-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:32:13-47
+55            android:launchMode="singleTop"
+55-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:29:13-43
+56            android:theme="@style/LaunchTheme"
+56-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:30:13-47
+57            android:windowSoftInputMode="adjustResize" >
+57-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:33:13-55
+58
+59            <!--
+60                 Specifies an Android theme to apply to this Activity as soon as
+61                 the Android process has started. This theme is visible to the user
+62                 while the Flutter UI initializes. After that, this theme continues
+63                 to determine the Window background behind the Flutter UI.
+64            -->
+65            <meta-data
+65-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:39:13-42:17
+66                android:name="io.flutter.embedding.android.NormalTheme"
+66-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:40:15-70
+67                android:resource="@style/NormalTheme" />
+67-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:41:15-52
+68            <!--
+69                 Displays an Android View that continues showing the launch screen
+70                 Drawable until Flutter paints its first frame, then this splash
+71                 screen fades out. A splash screen is useful to avoid any visual
+72                 gap between the end of Android's launch screen and the painting of
+73                 Flutter's first frame.
+74            -->
+75            <intent-filter>
+75-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:48:13-51:29
+76                <action android:name="android.intent.action.MAIN" />
+76-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:49:17-68
+76-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:49:25-66
+77
+78                <category android:name="android.intent.category.LAUNCHER" />
+78-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:50:17-76
+78-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:50:27-74
+79            </intent-filter>
+80        </activity>
+81        <!--
+82             Don't delete the meta-data below.
+83             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+84        -->
+85        <meta-data
+85-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:55:9-57:33
+86            android:name="flutterEmbedding"
+86-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:56:13-44
+87            android:value="2" />
+87-->/Users/ditit/Documents/GitHub/TrendMicro/android/app/src/main/AndroidManifest.xml:57:13-30
+88
+89        <activity
+89-->[:url_launcher_android] /Users/ditit/Documents/GitHub/TrendMicro/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
+90            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+90-->[:url_launcher_android] /Users/ditit/Documents/GitHub/TrendMicro/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
+91            android:exported="false"
+91-->[:url_launcher_android] /Users/ditit/Documents/GitHub/TrendMicro/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+92            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+92-->[:url_launcher_android] /Users/ditit/Documents/GitHub/TrendMicro/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+93
+94        <uses-library
+94-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+95            android:name="androidx.window.extensions"
+95-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+96            android:required="false" />
+96-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+97        <uses-library
+97-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+98            android:name="androidx.window.sidecar"
+98-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+99            android:required="false" />
+99-->[androidx.window:window:1.0.0-beta04] /Users/ditit/.gradle/caches/transforms-3/6f3c94bc7e415994af128d830fc65f80/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+100
+101        <activity
+101-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+102            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+102-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+103            android:excludeFromRecents="true"
+103-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+104            android:exported="false"
+104-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+105            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+105-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+106        <!--
+107            Service handling Google Sign-In user revocation. For apps that do not integrate with
+108            Google Sign-In, this service will never be started.
+109        -->
+110        <service
+110-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+111            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+111-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+112            android:exported="true"
+112-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+113            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+113-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+114            android:visibleToInstantApps="true" />
+114-->[com.google.android.gms:play-services-auth:20.7.0] /Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
 115
-116</manifest>
+116        <activity
+116-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+117            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+117-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+118            android:exported="false"
+118-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+119            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+119-->[com.google.android.gms:play-services-base:18.0.1] /Users/ditit/.gradle/caches/transforms-3/c8da71f740c376e3581ab94b3b6c4ac0/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+120
+121        <meta-data
+121-->[com.google.android.gms:play-services-basement:18.2.0] /Users/ditit/.gradle/caches/transforms-3/d7657c983b2b428f997c0d6cec720a50/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+122            android:name="com.google.android.gms.version"
+122-->[com.google.android.gms:play-services-basement:18.2.0] /Users/ditit/.gradle/caches/transforms-3/d7657c983b2b428f997c0d6cec720a50/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+123            android:value="@integer/google_play_services_version" />
+123-->[com.google.android.gms:play-services-basement:18.2.0] /Users/ditit/.gradle/caches/transforms-3/d7657c983b2b428f997c0d6cec720a50/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+124    </application>
+125
+126</manifest>

@@ -18,7 +18,7 @@ class CustomImageView extends StatelessWidget {
 
   ///[file] is required parameter for fetching image file
   File? file;
-
+  
   double? height;
   double? width;
   Color? color;
@@ -88,6 +88,7 @@ class CustomImageView extends StatelessWidget {
         decoration: BoxDecoration(
           border: border,
           borderRadius: radius,
+          
         ),
         child: _buildImageView(),
       );
@@ -107,6 +108,7 @@ class CustomImageView extends StatelessWidget {
           width: width,
           fit: fit ?? BoxFit.contain,
           color: color,
+          
         ),
       );
     } else if (file != null && file!.path.isNotEmpty) {

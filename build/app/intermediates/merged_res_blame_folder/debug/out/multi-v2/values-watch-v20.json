@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.trendmicrofrontend.app-mergeDebugResources-12:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.trendmicrofrontend.app-mergeDebugResources-14:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/ditit/.gradle/caches/transforms-3/479488cdca8a93174377f9fc562a9c8f/transformed/jetified-play-services-auth-20.7.0/res/values-watch-v20/values.xml",

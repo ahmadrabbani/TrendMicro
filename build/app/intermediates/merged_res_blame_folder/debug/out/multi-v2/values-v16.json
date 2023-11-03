@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.trendmicrofrontend.app-mergeDebugResources-12:/values-v16/values-v16.xml",
+            "outputFile": "com.trendmicrofrontend.app-mergeDebugResources-14:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/ditit/.gradle/caches/transforms-3/aaab9055df4bcc213684bd8c9a4ce85d/transformed/core-1.6.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/ditit/.gradle/caches/transforms-3/b21b555973808439b375a8ab11ccbc03/transformed/core-1.10.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

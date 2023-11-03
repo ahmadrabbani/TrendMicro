@@ -6,7 +6,7 @@ import 'package:trendmicrofrontend/widgets/custom_text_form_field.dart';
 class DrawerMenuDraweritem extends StatelessWidget {
   DrawerMenuDraweritem(
    {
-    Key? key,
+   Key? key,
   }) : super(
           key: key,
         );
@@ -41,7 +41,7 @@ class DrawerMenuDraweritem extends StatelessWidget {
                 top: 1.v,
               ),
               child: Text(
-                "msg_m_vasaye3875_gmail_com".tr,
+                NavigationArgs.userId,
                 style: CustomTextStyles.bodyMediumLight,
               ),
             ),
@@ -52,35 +52,51 @@ class DrawerMenuDraweritem extends StatelessWidget {
                 color: theme.colorScheme.onErrorContainer.withOpacity(0.49),
               ),
             ),
-            CustomTextFormField(
-              // controller: controller.scanvalueoneController,
-              margin: EdgeInsets.only(
-                left: 20.h,
-                top: 39.v,
-                right: 16.h,
-              ),
-              hintText: "lbl_scan".tr,
-              hintStyle: CustomTextStyles.titleMediumSemiBold,
-              textInputAction: TextInputAction.done,
-              alignment: Alignment.center,
-              prefix: Container(
-                margin: EdgeInsets.fromLTRB(12.h, 12.v, 20.h, 12.v),
-                child: CustomImageView(
-                  svgPath: ImageConstant.imgFrame,
-                ),
-              ),
-              prefixConstraints: BoxConstraints(
-                maxHeight: 51.v,
-              ),
-              contentPadding: EdgeInsets.only(
-                top: 13.v,
-                right: 30.h,
-                bottom: 13.v,
-              ),
-              borderDecoration: TextFormFieldStyleHelper.fillPrimary,
-              fillColor: theme.colorScheme.primary,
-            ),
             Padding(
+              padding: EdgeInsets.only(
+                left: 30.h,
+                top: 39.v,
+                right: 51.h,
+              ),
+              child: Row(
+                children: [
+                  OutlinedButton(onPressed: ()=> {
+                      Get.toNamed(
+                        AppRoutes.homeScreen,
+                      )
+                    }, 
+                    
+                    child:Row(
+                      children: [
+                        CustomImageView(
+                      svgPath: ImageConstant.imgSettings,
+                      height: 26.v,
+                      width: 24.h,
+                      margin: EdgeInsets.only(bottom: 1.v),
+                      
+                    ),
+                    Padding(
+                    padding: EdgeInsets.only(
+                      left: 20.h,
+                      top: 3.v,
+                    ),
+                    child: Text(
+                      "lbl_scan".tr,
+                      style: theme.textTheme.bodyLarge,
+                    ),
+                  ),
+                      ]
+                      
+                    )
+                      
+                    
+                  
+                  )
+                ],
+              ),
+            ),
+            
+           Padding(
               padding: EdgeInsets.only(
                 left: 30.h,
                 top: 39.v,
